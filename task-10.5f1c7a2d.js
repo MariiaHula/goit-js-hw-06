@@ -1,0 +1,2 @@
+function e(){return`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`}const t=document.querySelector("#controls"),n=(t.children,t.children[0]),r=t.children[1],c=t.children[2],o=document.querySelector("#boxes");r.addEventListener("click",(()=>{o.append(...function(t){const n=[],r=30;for(let c=0;c<t;c++){const t=r+10*c+"px",o=document.createElement("div");o.style.width=t,o.style.height=t,o.style.backgroundColor=e(),n.push(o)}return n}(n.value))})),c.addEventListener("click",(()=>{o.innerHTML=""}));
+//# sourceMappingURL=task-10.5f1c7a2d.js.map
