@@ -24,10 +24,10 @@ const divBoxElem = document.querySelector('#boxes');
 
 
 const handleClickCreate = () => { 
-   divBoxElem.append(...createBoxes(input.value));
+   createBoxes(input.value);
     }
 const handleClickDestroy = () => { 
-  divBoxElem.innerHTML = '';
+  destroyBoxes();
 }
     
 buttonCreate.addEventListener('click', handleClickCreate);
@@ -45,9 +45,14 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     boxesArr.push(box);
   } 
-   return boxesArr;
+   divBoxElem.append(...boxesArr);
   }
   
+
+function destroyBoxes() {
+      divBoxElem.innerHTML = '';
+  }
+
  
 
 
