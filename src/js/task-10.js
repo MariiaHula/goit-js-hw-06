@@ -21,7 +21,7 @@ const input = controlsBoxes.children[0];
 const buttonCreate = controlsBoxes.children[1];
 const buttonDestroy = controlsBoxes.children[2];
 const divBoxElem = document.querySelector('#boxes');
-
+let startSize = 30;
 
 const handleClickCreate = () => { 
    createBoxes(input.value);
@@ -36,7 +36,6 @@ buttonDestroy.addEventListener('click', handleClickDestroy);
 
 function createBoxes(amount) {
   const boxesArr = [];
-  const startSize = 30;
   for (let i = 0; i < amount; i++) {
     const size = startSize + i * 10 + 'px';
     const box = document.createElement('div'); 
@@ -44,13 +43,16 @@ function createBoxes(amount) {
     box.style.height = size;
     box.style.backgroundColor = getRandomHexColor();
     boxesArr.push(box);
+   
   } 
-   divBoxElem.append(...boxesArr);
+  divBoxElem.append(...boxesArr);
+  startSize += amount * 10;
   }
   
 
 function destroyBoxes() {
-      divBoxElem.innerHTML = '';
+  divBoxElem.innerHTML = '';
+  startSize = 30;
   }
 
  

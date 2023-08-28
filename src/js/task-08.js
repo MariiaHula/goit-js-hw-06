@@ -22,7 +22,7 @@ function handleSubmit(event) {
   if (login === "" || password === "") {
     return alert('Please fill in all the fields!');
   }
-
-  console.log(`Login: ${login}, Password: ${password}`);
+  const userData = { login, password };
+  console.log(userData);
   loginForm.reset();
 }
